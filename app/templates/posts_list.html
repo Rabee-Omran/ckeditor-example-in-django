@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    hello there !
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.media }}
-        {{ form.as_p }}
-        <input type="submit" src="{% url 'hello' %}"  />
-    </form>
+    
+    {% for post in posts  %}
+    <div style="border: 1px solid blue;">
+<h1>{{post.title}}</h1>
+<p>{{post.description | safe}}</p>
+    </div>
+    <br>
+       
+    {% endfor %}
+        
 </body>
 </html>
