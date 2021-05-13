@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from app.forms import PostForm
 from app.models import Post
+from django.urls import reverse
+from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 
@@ -28,7 +30,7 @@ def post_update(request, id ):
     form = PostForm(request.POST or None, instance=instance)
     if form.is_valid():
         form.save()
-        return redirect('all_posts')
+        return HttpResponseRedirect(reverse('all_posts'))
 
 
     return render(request, 'post_update.html', {'form': form})
