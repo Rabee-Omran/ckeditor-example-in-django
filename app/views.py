@@ -6,7 +6,7 @@ from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 
-def hello(request):
+def home(request):
 
    
     form = PostForm(request.POST or None)

@@ -133,7 +133,13 @@ MEDIA_ROOT = BASE_DIR / 'media_root/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+# CKEDITOR_THUMBNAIL_SIZE = (75,75)
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
+
 CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moono',
