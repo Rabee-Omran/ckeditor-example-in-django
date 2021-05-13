@@ -10,8 +10,11 @@
     
     {% for post in posts  %}
     <div style="border: 1px solid blue;">
-<h1>{{post.title}}</h1>
-<p>{{post.description | safe}}</p>
+        <h1>{{post.title}}</h1>
+        <p>{{post.description | safe}}</p>
+        <br>
+        <a href="{% url 'post_update' post.id %}">Update</a>
+        <a href="{% url 'post_delete' post.id %}">Delete</a>
     </div>
     <br>
        
